@@ -3,7 +3,7 @@
 const state = document.getElementById('status');
 const retry = document.getElementById('retry');
 const remoteRepository = 'xoqhdgh1002/cms-analysis-entry';
-const pointerUrl = `https://raw.githubusercontent.com/${remoteRepository}/route/tunnel.json`;
+const pointerUrl = `https://api.github.com/repos/${remoteRepository}/contents/tunnel.json?ref=route`;
 const protectedTunnel = /^https:\/\/[a-z0-9]+(?:-[a-z0-9]+)*\.trycloudflare\.com\/?$/;
 
 async function connect() {
@@ -11,7 +11,8 @@ async function connect() {
   retry.hidden = true;
   for (let attempt = 0; attempt < 3; attempt += 1) {
     try {
-      const response = await fetch(`${pointerUrl}?v=${Date.now()}`, {
+      const response = await fetch(`${pointerUrl}&v=${Date.now()}`, {
+        headers: { Accept: 'application/vnd.github.raw+json' },
         cache: 'no-store', credentials: 'omit', signal: AbortSignal.timeout(4500),
       });
       if (!response.ok) throw new Error('Route unavailable');
