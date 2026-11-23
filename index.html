@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; connect-src https://raw.githubusercontent.com; base-uri 'none'; form-action 'none'">
+  <title>CMS Analysis Workspace</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f7f9fd; color: #17233b; font: 16px/1.6 system-ui, sans-serif; }
+    main { width: min(28rem, calc(100% - 5rem)); padding: 2rem; border: 1px solid #dbe2ee; border-radius: 1rem; background: #fff; }
+    h1 { font-size: 1.55rem; line-height: 1.2; margin: 0 0 .7rem; }
+    p { margin: 0 0 .8rem; color: #465570; }
+    button { padding: .55rem .85rem; border: 0; border-radius: .4rem; background: #2257e8; color: #fff; font: inherit; cursor: pointer; }
+  </style>
+  <script src="./redirect.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>CMS Analysis Workspace</h1>
+    <p id="status" role="status">이메일 PIN 로그인으로 연결 중입니다.</p>
+    <button id="retry" type="button" hidden>다시 연결</button>
+    <noscript><p>연결 주소를 확인하려면 JavaScript를 켜 주세요.</p></noscript>
+  </main>
+</body>
+</html>
